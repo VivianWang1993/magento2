@@ -37,7 +37,9 @@
                     deps: dependencies,
                     callback: function (string) {
                         if (typeof string === 'string') {
-                            $.mage.translate.add(JSON.parse(string));
+                            if (string) {
+                                $.mage.translate.add(JSON.parse(string));
+                            }
                             $.localStorage.set('mage-translation-storage', string);
                             $.localStorage.set(
                                 'mage-translation-file-version',
